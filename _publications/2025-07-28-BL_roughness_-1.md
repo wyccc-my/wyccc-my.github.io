@@ -8,7 +8,7 @@ date: 2025-07-28
 venue: 'Journal of Geophysical Research: Atmospheres'
 slidesurl: 'https://academicpages.github.io/files/slides1.pdf'
 paperurl: 'https://doi.org/10.1029/2025JD044292'
-bibtexurl: 'https://academicpages.github.io/files/bibtex1.bib'
+bibtexurl: 'https://academicpages.github.io/files/BL_roughness_-1.bib'
 citation: 'Your Name, You. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'
 ---
 
