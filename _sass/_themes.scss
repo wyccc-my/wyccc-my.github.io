@@ -109,14 +109,15 @@ $xing-color                 : #006567;
   max-width: 300px !important;
   flex: 0 0 300px !important;
 }
+/* ===== FIX AVATAR SIZE ===== */
 
 .author__avatar {
   width: 220px !important;
   max-width: 220px !important;
-  margin: 0 auto;
 }
 
 .author__avatar img {
   width: 220px !important;
   max-width: 220px !important;
+  height: auto !important;
 }
