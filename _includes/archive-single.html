@@ -85,3 +85,18 @@
 
   </article>
 </div>
+<script>
+  function toggleBib(slug) {
+    var box = document.getElementById("bibtex-box-" + slug);
+    if (box.style.display === "none") {
+      box.style.display = "block";
+    } else {
+      box.style.display = "none";
+    }
+  }
+
+  function copyBib(slug) {
+    var text = document.getElementById("bibtex-content-" + slug).innerText;
+    navigator.clipboard.writeText(text);
+  }
+</script>
