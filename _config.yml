@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "sunrise" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Yuechao Wang / Site Title"
+title                    : "Yuechao Wang / About"
 title_separator          : "-"
 name                     : "Yuechao Wang"
 description              : "Yuechao Wang academic portfolio"
