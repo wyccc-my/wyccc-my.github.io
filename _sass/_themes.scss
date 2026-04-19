@@ -101,23 +101,3 @@ $vimeo-color                : #1ab7ea;
 $vine-color                 : #00bf8f;
 $youtube-color              : #bb0000;
 $xing-color                 : #006567;
-
-/* ===== FORCE SIDEBAR WIDTH ===== */
-
-.sidebar {
-  width: 300px !important;
-  max-width: 300px !important;
-  flex: 0 0 300px !important;
-}
-/* ===== FIX AVATAR SIZE ===== */
-
-.author__avatar {
-  width: 220px !important;
-  max-width: 220px !important;
-}
-
-.author__avatar img {
-  width: 220px !important;
-  max-width: 220px !important;
-  height: auto !important;
-}
