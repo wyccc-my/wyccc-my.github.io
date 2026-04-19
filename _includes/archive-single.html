@@ -52,33 +52,36 @@
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
     {% endif %}
     
-    {% if post.citation and post.paperurl and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation and post.paperurl and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.paperurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation and post.paperurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a></p>
-    {% elsif post.citation and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl}}">Download Bibtex</a></p>
-    {% elsif post.citation and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation %}
-      <p>Recommended citation: {{ post.citation }}</p>
-    {% elsif post.paperurl and post.bibtexurl %}
-      <p><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.paperurl %}
-      <p><a href="{{ post.paperurl }}">Download Paper</a></p>
-    {% elsif post.slidesurl and post.bibtexurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.slidesurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.bibtexurl %}
-      <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% endif %}
+   <p style="font-size: smaller">
+  {% if post.citation %}
+    Recommended citation: {{ post.citation }}<br />
+  {% endif %}
+
+  {% assign has_link = false %}
+
+  {% if post.paperurl %}
+    <a href="{{ post.paperurl }}">Paper</a>
+    {% assign has_link = true %}
+  {% endif %}
+
+  {% if post.slidesurl %}
+    {% if has_link %} | {% endif %}
+    <a href="{{ post.slidesurl }}">Slides</a>
+    {% assign has_link = true %}
+  {% endif %}
+
+  {% if post.bibtex %}
+    {% if has_link %} | {% endif %}
+    <a href="javascript:void(0);" onclick="toggleBib('{{ post.slug }}')">BibTeX</a>
+  {% endif %}
+</p>
+
+{% if post.bibtex %}
+  <div id="bibtex-box-{{ post.slug }}" style="display:none; border:1px solid #ccc; padding:10px; margin-top:10px; font-size: smaller; background:#f8f8f8;">
+    <pre id="bibtex-content-{{ post.slug }}" style="white-space: pre-wrap; margin:0;">{{ post.bibtex }}</pre>
+    <button onclick="copyBib('{{ post.slug }}')" style="margin-top:8px;">Copy</button>
+  </div>
+{% endif %}
 
   </article>
 </div>
