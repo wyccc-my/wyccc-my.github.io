@@ -1,5 +1,5 @@
 ---
-title: "On the Surface Roughness Effects on $$-1$$ Spectral Scaling in Atmospheric Boundary Layer"
+title: "On the Surface Roughness Effects on -1 Spectral Scaling in Atmospheric Boundary Layer"
 collection: publications
 category: manuscripts
 permalink: /publication/2025-07-28-BL_roughness_-1
